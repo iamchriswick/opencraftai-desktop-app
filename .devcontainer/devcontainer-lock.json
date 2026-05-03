@@ -1,0 +1,29 @@
+{
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "2.16.1",
+      "resolved": "ghcr.io/devcontainers/features/docker-in-docker@sha256:ce078b7bf7d9ef3bcb9813b32103795d8d72172446890b64772cbe1dec6baafd",
+      "integrity": "sha256:ce078b7bf7d9ef3bcb9813b32103795d8d72172446890b64772cbe1dec6baafd"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "1.7.1",
+      "resolved": "ghcr.io/devcontainers/features/node@sha256:8c0de46939b61958041700ee89e3493f3b2e4131a06dc46b4d9423427d06e5f6",
+      "integrity": "sha256:8c0de46939b61958041700ee89e3493f3b2e4131a06dc46b4d9423427d06e5f6"
+    },
+    "ghcr.io/devcontainers/features/rust": {
+      "version": "1.5.0",
+      "resolved": "ghcr.io/devcontainers/features/rust@sha256:0c55e65f2e3df736e478f26ee4d5ed41bae6b54dac1318c443e31444c8ed283c",
+      "integrity": "sha256:0c55e65f2e3df736e478f26ee4d5ed41bae6b54dac1318c443e31444c8ed283c"
+    },
+    "ghcr.io/olivierlemasle/devcontainers-features/tauri:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/olivierlemasle/devcontainers-features/tauri@sha256:7bc1f55aa938b281311098beadf74603e979601bb7de87115b4470fb5123341c",
+      "integrity": "sha256:7bc1f55aa938b281311098beadf74603e979601bb7de87115b4470fb5123341c"
+    },
+    "ghcr.io/prulloac/devcontainer-features/bun:1": {
+      "version": "1.2.0",
+      "resolved": "ghcr.io/prulloac/devcontainer-features/bun@sha256:d73ff97653e603acd102514baf6b63873fca54d5b883722c7d8344efeeb51097",
+      "integrity": "sha256:d73ff97653e603acd102514baf6b63873fca54d5b883722c7d8344efeeb51097"
+    }
+  }
+}
