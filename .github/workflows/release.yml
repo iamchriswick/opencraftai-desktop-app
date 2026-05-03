@@ -13,15 +13,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: ubuntu-22.04
-            args: '--runner cargo-xwin --target x86_64-pc-windows-msvc'
-            label: windows
           - platform: macos-latest
             args: '--target aarch64-apple-darwin'
-            label: macos
           - platform: ubuntu-22.04
             args: ''
-            label: linux
+          - platform: windows-latest
+            args: ''
 
     runs-on: ${{ matrix.platform }}
 
@@ -42,23 +39,13 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: ${{ matrix.label == 'macos' && 'aarch64-apple-darwin' || matrix.label == 'windows' && 'x86_64-pc-windows-msvc' || '' }}
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin' || '' }}
 
-      - name: Install Linux native dependencies
-        if: matrix.label == 'linux'
+      - name: Install Linux dependencies
+        if: matrix.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
           sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
-
-      - name: Install Windows cross-compile dependencies
-        if: matrix.label == 'windows'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y nsis lld llvm
-
-      - name: Install cargo-xwin
-        if: matrix.label == 'windows'
-        run: cargo install --locked cargo-xwin
 
       - name: Install frontend dependencies
         run: pnpm install
