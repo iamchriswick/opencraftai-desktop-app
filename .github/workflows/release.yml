@@ -50,16 +50,11 @@ jobs:
       - name: Install frontend dependencies
         run: pnpm install
 
-      - name: Build and release
+      - name: Build
         uses: tauri-apps/tauri-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
-          tagName: v__VERSION__
-          releaseName: OpenCraft AI v__VERSION__
-          releaseBody: ''
-          releaseDraft: true
-          prerelease: false
           args: ${{ matrix.args }}
